@@ -1,0 +1,407 @@
+@import "reset.css";
+
+html, body {
+    
+    font-family: 'News Cycle', sans-serif;
+    height: 100%;
+    color: #fff;
+
+}
+
+
+p {
+	
+	font-family: 'News Cycle', sans-serif;
+	font-size: 100%;
+	line-height: 140%;
+}
+
+
+p.testo_giustificato {
+	text-align: justify;
+	line-height: 170%;
+	font-size: 115%;
+}
+
+
+h1 {
+font-family: 'News Cycle', sans-serif;
+font-weight: 700;
+font-size: 150%;
+line-height: 140%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'News Cycle', sans-serif;
+    font-weight: 700;
+    font-size: 120%;
+    line-height: 140%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+}
+
+div.rientranza_eventi {
+    padding-left: 30px;  
+}
+
+h3.data_evento {
+font-family: 'News Cycle', sans-serif;
+font-size: 102%;
+    line-height: 110%;
+    margin-bottom: 16px;
+    text-align: left; 
+
+
+} 
+
+hr.gradient {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #ffffff;
+}
+
+.testo_evento {
+    
+text-align: left; 
+    
+}
+
+
+h2.titolo_evento {
+font-family: 'News Cycle', sans-serif;
+font-weight: 700;
+font-size: 180%;
+    line-height: 120%;
+    margin-bottom: 20px;
+    text-align: left; 
+    text-transform: uppercase;
+
+}
+
+::selection { 
+    background: #cccccc; 
+    } 
+::-moz-selection { 
+    background: #cccccc; 
+}
+
+
+
+
+
+
+
+@keyframes example {
+    0% {background-color: #79abb4;}
+    30% {background-color: #79abb4;}
+    45% {background-color: #79abb4;}
+    55% {background-color: #79abb4;}
+	 100% {background-color: #79abb4;}
+}
+
+
+
+.cambia_colore {
+
+	background-color: red;
+	-webkit-animation-name: example; /* Chrome, Safari, Opera */
+	-webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+	animation-name: example;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+}
+
+
+
+
+div.fascia_menu {
+	position: fixed;
+	height: 85px;
+	width: 100%;
+	background-color: #79abb4;
+	opacity: 0.9;
+	z-index: 10;
+}
+
+
+
+div.fascia_sfumatura_header {
+	position: fixed;
+	height: 85px;
+	width: 100%;
+	z-index: 2;
+        background-color: #79abb4; 
+        opacity: 0.2;
+	}
+
+
+div.fascia_sfumatura_footer {
+	position: fixed;
+	height: 80px;
+	width: 100%;	
+	bottom: 0;
+    background-color: #79abb4;
+    opacity: 0.2;
+
+	}
+
+
+
+
+
+
+div#immagine_sfondo_home {
+width: 100%; height: 100%; top: 0; left: 0;
+background: url(spazio_elle.jpg) no-repeat center top; position: fixed; z-index: -1;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+
+div#box_centrato {
+	width: 100%;
+	min-width: 300px;
+	margin: 0 auto;
+    margin-bottom: 150px;
+    padding-left: 20px;
+
+    
+	height: auto;
+	
+	z-index: 5;
+    
+    
+    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    
+    
+    
+}
+
+
+/* _____________test flexbox________________ */
+
+
+.flexbox {
+    margin-top: 200px;
+    width: 100%; 
+    height: auto;
+
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center; 
+    justify-content: space-around;
+    
+}
+
+
+.evento { 
+    height: 430px;
+    width: 30%;
+    min-width: 300px;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+
+.corso { 
+    height: auto;
+    width: 30%;
+    min-width: 300px;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+
+
+
+/* ________________test flexbox_______________ */ 
+
+
+
+
+/* ________________///////////TEST MASONRY////////////_______________ */
+
+* { box-sizing: border-box; }
+
+
+/* ---- grid ---- */
+
+.grid {
+margin-top: 200px;
+ text-align: center;
+    width: auto;
+    display: flex; flex-wrap: wrap;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+    float: left;
+  height: auto;
+    width: 30%;
+    min-width: 300px;
+    border: 1px solid #fff;
+    margin: 20px;
+    padding: 15px;
+
+    
+    
+}
+
+
+/* ________________///////////TEST MASONRY////////////_______________ */
+
+
+
+img.ridimensiona { 
+width: 100%;
+    min-width: 300px;
+    
+    margin-bottom: 50px;
+    
+}
+
+
+
+
+
+
+a.collegamenti_menu:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.collegamenti_menu:hover {
+	color: #cbcbcb;
+	background-color: #e8e8e8;
+}
+
+a.collegamenti_menu:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+
+
+a.collegamenti_interni:link {
+    color: #407bf5;
+    text-decoration: underline;
+}
+
+a.collegamenti_interni:hover {
+	color: #fe9809;
+}
+
+
+
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    float: right;
+}
+
+
+
+ul#menu li {
+	float: right;
+}
+
+
+
+li a {
+    display: block;
+		text-align: center;
+    padding: 21px 8px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #e8e8e8;
+}
+
+.active {
+    background-color: #cbcbcb;
+}
+
+
+#indirizzo {
+
+	float: left ; 
+	margin-left: 27px; 
+	margin-top: 23px
+	
+}
+
+
+
+div#footer {
+text-align: center;
+	position: fixed;
+width: 100%;
+	  bottom: 0;
+	  font-size: 70%;
+	  padding-top: 20px;
+	height: 50px;
+	background-color: #79abb4;
+	  opacity: 0.9;
+    z-index: 10;
+	  
+}
+
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+
+
+
+#indirizzo {
+	display: none;
+}
+
+    
+#logo_scompare {
+	display: none;
+}
+    
+    
+
+}
+
+.text-box {
+    text-align: left;
+    margin-top: 150px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    line-height: 1.5
+}

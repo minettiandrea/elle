@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+#GET     /export                           controllers.NewsletterController.export()
+GET     /preview                           controllers.NewsletterController.preview()
+
+GET     /                                  controllers.PagesController.home()
+GET     /calendario                        controllers.PagesController.calendario()
+GET     /spazi                             controllers.PagesController.spazi()
+GET     /contatti                          controllers.PagesController.contatti()
+GET     /chi-siamo                         controllers.PagesController.chisiamo()
+
+
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
