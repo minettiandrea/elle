@@ -34,6 +34,7 @@ object Esposizione{
     Evento(
       titolo = event._2.title,
       data = data,
+      dataFull = data,
       giorno = day,
       mese = month,
       descrizione = event._2.description.map(_.replaceAll("\n","<br>")),

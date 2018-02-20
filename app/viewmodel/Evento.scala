@@ -9,6 +9,7 @@ import tdl.model.FormData
 case class Evento(
                  titolo:String,
                  data:String,
+                 dataFull:String,
                  giorno:String,
                  mese:String,
                  descrizione:Option[String],
@@ -36,8 +37,11 @@ object Evento{
 
     val date = event._1.start.getOrElse(0L) - 60*60*1000
 
-    val format = new SimpleDateFormat("EEE, d ' - ore:' HH:mm",Locale.ITALIAN)
+    val format = new SimpleDateFormat("EEE, d ' - ore:' H:mm",Locale.ITALIAN)
     val data = format.format(new java.util.Date(date))
+
+    val formatFull = new SimpleDateFormat("EEE, d MMMM ' - ore:' H:mm",Locale.ITALIAN)
+    val dataFull = formatFull.format(new java.util.Date(date))
 
     val dayFormat = new SimpleDateFormat("d",Locale.ITALIAN)
     val day = dayFormat.format(new java.util.Date(date))
@@ -48,6 +52,7 @@ object Evento{
     Evento(
       titolo = event._2.title,
       data = data,
+      dataFull = dataFull,
       giorno = day,
       mese = month,
       descrizione = event._2.description.map(_.replaceAll("\n","<br>")),
