@@ -1,0 +1,86 @@
+@()
+@layout.baseWithFooter {
+
+    <div style="display: block; width: 100%; margin-top: 150px">
+    <div id="google-map" style="height: 400px; width: 80%; margin: 0 auto" data-latitude="46.16687" data-longitude="8.798503"></div>
+    <div style="margin-top: 50px">
+                <h1>
+                    I responsabili per settore
+                </h1>
+
+
+                    <br/>
+                    Musica
+                    <br/>
+                    Ronnie Rodriguez
+                    <br/>
+                    <a class="collegamenti_interni" href="mailto:musica@@ellelocarno.ch">musica@@ellelocarno.ch</a>
+                    <br/>
+                    <br/>
+                    Arti performative
+                    <br/>
+                    Marco Cupellari
+                    <br/>
+                    <a class="collegamenti_interni" href="mailto:artiperformative@@ellelocarno.ch">
+                        artiperformative@@ellelocarno.ch</a>
+                    <br/>
+                    <br/>
+                    Arti visive
+                    <br/>
+                    Riccardo Lisi
+                    <br/>
+                    <a class="collegamenti_interni" href="mailto:artivisive@@ellelocarno.ch">
+                        artivisive@@ellelocarno.ch</a>
+                    <br/>
+                    <br/>
+                    Letteratura e cinema
+                    <br/>
+                    Yari Moro
+                    <br/>
+                    <a class="collegamenti_interni" href="mailto:letteraturacinema@@ellelocarno.ch">
+                        letteraturacinema@@ellelocarno.ch</a>
+                    <br/>
+                    <br/>
+                    Atelier
+                    <br/>
+                    Matteo Minetti
+                    <br/>
+                    <a class="collegamenti_interni" href="mailto:atelier@@ellelocarno.ch">atelier@@ellelocarno.ch</a>
+                    <br/>
+                    <br/>
+                    Socio-ricreativo
+                    <br/>
+                    Lorenzo Perucchi
+                    <br/>
+                    <a class="collegamenti_interni" href="mailto:socio-ricreativo@@ellelocarno.ch">
+                        socio-ricreativo@@ellelocarno.ch</a>
+                    <br/>
+                    <br/>
+
+
+
+            </div>
+    </div>
+
+}{
+    <script>
+            //Google Map
+            var get_latitude = $('#google-map').data('latitude');
+            var get_longitude = $('#google-map').data('longitude');
+
+            function initialize_google_map() {
+                var myLatlng = new google.maps.LatLng(get_latitude, get_longitude);
+                var mapOptions = {
+                    zoom: 14,
+                    scrollwheel: false,
+                    center: myLatlng
+                };
+                var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map
+                });
+            }
+            google.maps.event.addDomListener(window, 'load', initialize_google_map);
+    </script>
+}

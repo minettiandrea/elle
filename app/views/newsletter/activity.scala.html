@@ -1,0 +1,14 @@
+@import viewmodel.Evento
+@(evento:Evento)
+
+<span style="color:#FF0000; font-size:18px">@evento.giorno @evento.mese - @evento.titolo </span>
+<br>
+<span style="font-size:12px">@evento.descrizione.map{ d => @Html(d)}<br>
+    <strong>
+        @evento.luogo<br>
+        @Html(evento.data)
+
+    </strong><br>
+    @evento.info.map{ info => Info: @info<br>}
+</span>
+<br>

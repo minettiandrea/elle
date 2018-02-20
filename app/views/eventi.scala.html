@@ -1,0 +1,42 @@
+@import viewmodel.Evento
+@(eventi:Seq[Evento])
+
+@layout.base{
+    <div class="grid">
+
+    @eventi.map{ evento =>
+            <!-- ////////////EVENTO//////////////////////-->
+
+
+        <div class="grid-item">
+
+
+            <h3 class="data_evento"><i class="fa fa-clock-o" aria-hidden="true"></i><span>&nbsp;&nbsp;</span>@evento.data</h3>
+
+            <div class="rientranza_eventi">
+                <hr class="gradient">
+                <br/>
+                <h2 class="titolo_evento">
+                @evento.titolo
+                </h2>
+
+                <p class="testo_evento">
+                @evento.descrizione.map{ d => @Html(d) }
+                    <br/>
+                    <br/>
+                    @evento.organizzatore.map{ o => Organizzatore: @o <br/> }
+                    Locale: @evento.luogo <br/>
+                    @evento.info.map{ o => Info: @o <br/> }
+                    <br/>
+                </p>
+            </div>
+
+
+        </div>
+
+
+            <!-- ////////////FINE EVENTO//////////////////////-->
+     }
+
+    </div>
+}
