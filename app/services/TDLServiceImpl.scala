@@ -16,7 +16,7 @@ class TDLServiceImpl @Inject()(configuration: Configuration)(implicit ec:Executi
   val teamIds = Seq("592bf008630000630070891a","594926ad630000d50070891f","594926b1630000c300708920","5970bb19630000e907708961","5970bb37630000f407708962","5970bb46630000e007708963","5970bb616300000308708964","5970bb706300000708708965","5970bb80630000ff07708966","5970bb8a630000ff07708967","5a0c4ce32a0100a205be13d9")
 
 
-  def tdl = TDL(
+  val  tdl = TDL(
     configuration.get[String]("tdl.username"),
     configuration.get[String]("tdl.key"),
     configuration.get[String]("tdl.endpoint")

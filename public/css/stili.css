@@ -405,3 +405,15 @@ width: 100%;
     color: #333;
     line-height: 1.5
 }
+
+.main-button{
+    border: 2px solid #79abb4;
+    color: #79abb4;
+    line-height: 40px;
+    width: 200px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
