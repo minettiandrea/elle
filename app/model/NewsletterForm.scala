@@ -5,7 +5,8 @@ import tdl.model.FormData
 
 case class NewsletterForm(
                        title:String,
-                       intro:Option[String]
+                       intro:Option[String],
+                       `date-index-field`:Long
                      ) {
 }
 
@@ -17,7 +18,7 @@ object NewsletterForm{
     for(fd <- fds) yield {
       fd.data.as[NewsletterForm].right.toOption
     }
-  }.flatten.headOption.map{ x =>
+  }.flatten.sortBy(-_.`date-index-field`).headOption.map{ x =>
     x.copy(intro = x.intro.map(_.replaceAll("\n","<br>")))
   }
 }

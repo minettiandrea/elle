@@ -29,7 +29,7 @@ class TDLServiceImpl @Inject()(configuration: Configuration)(implicit ec:Executi
     filteredFormsEventi = forms.filter(_._id.exists(id => formIdsEventi.contains(id)))
     eventiForm <- tdl.formData(start,end,filteredFormsEventi,filteredTeam)
   } yield {
-    val eventiTDL = EventoForm.formTDL(eventiForm).filter(_._2.pubblicato)
+    val eventiTDL = EventoForm.formTDL(eventiForm).filter(x => x._1.start.exists(_ > start) && x._2.pubblicato)
     val eventi = Evento.fromTDL(eventiTDL,grouped).sortBy(_.start)
     eventi
   }
@@ -46,10 +46,9 @@ class TDLServiceImpl @Inject()(configuration: Configuration)(implicit ec:Executi
   }
 
   override def newsletter(start: Long, end: Long) = for{
-    teams <- tdl.teams()
     forms <- tdl.forms()
     parameterForm = forms.filter(_._id.contains("newsletter"))
-    parameters <- tdl.formData(start,end,parameterForm,teams)
+    parameters <- tdl.formData(parameterForm)
   } yield NewsletterForm.formTDL(parameters)
 
   override def pagina(titolo: String) = for{

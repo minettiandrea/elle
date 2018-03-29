@@ -1,6 +1,6 @@
 package controllers
 
-import java.time.Period
+import java.time.{LocalDate, Period, ZoneId}
 import java.time.temporal.TemporalUnit
 import javax.inject._
 
@@ -9,8 +9,6 @@ import play.api._
 import play.api.libs.json.Json
 import play.api.mvc._
 import services.TDLService
-
-
 
 import scala.concurrent.ExecutionContext
 
@@ -45,10 +43,13 @@ class NewsletterController @Inject()(
     }
   }
 
-  def preview() = Action.async {  implicit request: Request[AnyContent] =>
+  def preview(month:Int,year:Int) = Action.async {  implicit request: Request[AnyContent] =>
 
-    val start = 1517443200000L // new java.util.Date().getTime
-    val end = 1519862400000L //new java.util.Date().toInstant.plus(Period.ofDays(35)).toEpochMilli
+    val startDate = LocalDate.of(year,month,1) // new java.util.Date().getTime
+    val endDate = startDate.plusMonths(1) //new java.util.Date().toInstant.plus(Period.ofDays(35)).toEpochMilli
+
+    val start = startDate.atStartOfDay(ZoneId.of("Europe/Zurich")).toInstant.toEpochMilli
+    val end = endDate.atStartOfDay(ZoneId.of("Europe/Zurich")).toInstant.toEpochMilli
 
     for{
       eventi <- tdlService.eventi(start,end,true)

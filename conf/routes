@@ -5,7 +5,7 @@
 
 # An example controller showing a sample home page
 #GET     /export                           controllers.NewsletterController.export()
-GET     /preview                           controllers.NewsletterController.preview()
+GET     /preview/:month/:year              controllers.NewsletterController.preview(month: Int,year: Int)
 
 GET     /                                  controllers.PagesController.home()
 GET     /calendario                        controllers.PagesController.calendario()
