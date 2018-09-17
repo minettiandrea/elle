@@ -1,7 +1,7 @@
 name := """elle"""
 organization := "ch.wavein"
 
-version := "1.0-SNAPSHOT"
+version := "1.2-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
